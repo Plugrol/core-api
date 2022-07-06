@@ -3,7 +3,7 @@
  * Copyright (C) KissenPvP team and contributors.
  *
  * This program is free software and is free to redistribute
- * and/or modify under the terms of the GNU Lesser General Public
+ * and/or modify under the terms of the GNU General Public
  * License as published by the Free Software Foundation,
  * either version 3 of the License, or (at your option)
  * any later version.
@@ -13,8 +13,8 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU Lesser General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 package de.kissenpvp.api.base.loader;
 

@@ -1,3 +1,22 @@
+/*
+ * KissenPvP
+ * Copyright (C) KissenPvP team and contributors.
+ *
+ * This program is free software and is free to redistribute
+ * and/or modify under the terms of the GNU General Public
+ * License as published by the Free Software Foundation,
+ * either version 3 of the License, or (at your option)
+ * any later version.
+ *
+ * This program is intended for the purpose of joy,
+ * WITHOUT WARRANTY without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package de.kissenpvp.api.message;
 
 import de.kissenpvp.api.base.Implementation;
@@ -29,7 +48,7 @@ public interface MessageImplementation extends Implementation
      * @see #getMessage(String, Sentence)
      */
     ChatComponent getRawMessage(String language, Sentence sentence);
-    
+
     void registerSentence(Sentence sentence);
 
     default String getLastColorCode(ChatComponent chatComponent)
