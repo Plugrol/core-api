@@ -6,6 +6,12 @@ package de.kissenpvp.api.util;
  */
 public record TimeNode(long length, long start, long end, long predictedEnd)
 {
+    /**
+     * Changes the time this {@link TimeNode} will last, by creating a new one using the same parameters but changing the {@link #end} variable.
+     *
+     * @param end the new end variable which should be set.
+     * @return the new created time node, which then can be updated somewhere.
+     */
     public TimeNode setEnd(long end)
     {
         return new TimeNode(length, start, end, predictedEnd);
