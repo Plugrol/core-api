@@ -1,0 +1,16 @@
+package de.kissenpvp.api.base.loader;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+/**
+ * Annotates classes, which should be ignored, by the {@link ClassScanner}
+ *
+ * @author groldi
+ * @since 0.0.1-SNAPSHOT
+ */
+@Target(value = {ElementType.TYPE}) @Retention(RetentionPolicy.RUNTIME) public @interface Ignore
+{
+}
