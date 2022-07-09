@@ -79,24 +79,6 @@ public interface KissenPlugin extends Implementation
     void onStop();
 
     /**
-     * Called after a plugin is loaded but before it has been enabled.
-     * <p>
-     * When multiple plugins are loaded, the onLoad() for all plugins is
-     * called before any onEnable() is called.
-     */
-    void preStart();
-
-    /**
-     * Called when this plugin is enabled
-     */
-    void start();
-
-    /**
-     * This method is called after the start.
-     */
-    void postStart();
-
-    /**
      * Called when this plugin is disabled
      */
     void stop();

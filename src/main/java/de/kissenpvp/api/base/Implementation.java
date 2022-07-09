@@ -25,5 +25,19 @@ package de.kissenpvp.api.base;
  */
 public interface Implementation
 {
+    default boolean preStart()
+    {
+        return true;
+    }
+
+    default boolean start()
+    {
+        return true;
+    }
+
+    default boolean postStart()
+    {
+        return true;
+    }
 
 }
