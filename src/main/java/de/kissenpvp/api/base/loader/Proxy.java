@@ -25,7 +25,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Annotates classes, which should be stored in the {@link ClassScanner#getList(Class)}
+ * Annotates classes, which should be stored in the {@link ClassScannerImplementation#getList(Class)}
  *
  * @author groldi
  * @since 0.0.1-SNAPSHOT

@@ -19,6 +19,8 @@
 
 package de.kissenpvp.api.base.loader;
 
+import de.kissenpvp.api.base.Implementation;
+
 import java.util.List;
 import java.util.Set;
 
@@ -26,7 +28,7 @@ import java.util.Set;
  * @author Groldi
  * @since 1.0.0-SNAPSHOT
  */
-public interface ClassScanner
+public interface ClassScannerImplementation extends Implementation
 {
 
     Set<ScanEntry> getPaths();
