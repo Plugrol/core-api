@@ -24,7 +24,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.kissenpvp</groupId>
-    <artifactId>KissenCoreAPI</artifactId>
+    <artifactId>kissenapi</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <properties>
