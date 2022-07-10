@@ -23,11 +23,23 @@ package de.kissenpvp.api.base;
  * @author Groldi
  * @since 1.0.0-SNAPSHOT
  */
-public interface Kissen
+public abstract class Kissen
 {
-    InfoNode getInternals();
+    private static Kissen instance;
 
-    void start(InfoNode infoNode) throws KissenStartException;
+    public static Kissen getInstance()
+    {
+        return instance;
+    }
 
-    <T extends Implementation> T getImplementation(Class<T> implementation);
+    protected static void setInstance(Kissen instance)
+    {
+        Kissen.instance = instance;
+    }
+
+    public abstract InfoNode getInternals();
+
+    public abstract void start(InfoNode infoNode) throws KissenStartException;
+
+    public abstract <T extends Implementation> T getImplementation(Class<T> implementation);
 }
