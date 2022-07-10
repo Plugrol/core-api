@@ -32,7 +32,6 @@ import java.sql.Statement;
  */
 public interface SQL extends Implementation
 {
-
     /**
      * Establishes a connection to the responsible driver.
      *

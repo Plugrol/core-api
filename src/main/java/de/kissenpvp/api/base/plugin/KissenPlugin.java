@@ -23,6 +23,8 @@ import de.kissenpvp.api.base.Implementation;
 import de.kissenpvp.api.base.Kissen;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.jar.JarFile;
 
 /**
  * @author Groldi
@@ -47,6 +49,11 @@ public interface KissenPlugin extends Implementation
      * @return file of the plugin's jar
      */
     File getFile();
+
+    /**
+     * @return file of the plugin's jar as {@link java.util.jar.JarFile}
+     */
+    JarFile getJarFile() throws IOException;
 
     /**
      * @return the folder containing plugin sources.

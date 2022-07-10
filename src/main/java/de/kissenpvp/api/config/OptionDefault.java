@@ -36,7 +36,7 @@ public abstract class OptionDefault<T> implements Option<T>
 
     @Override public T getValue()
     {
-        return value;
+        return value == null ? getDefault() : value;
     }
 
     @Override public void setValue(T value)

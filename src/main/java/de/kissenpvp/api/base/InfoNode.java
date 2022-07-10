@@ -31,7 +31,6 @@ import java.util.jar.JarFile;
  * @since 1.0.0-SNAPSHOT
  */
 public record InfoNode(JarFile pluginSourceFile, File dataFolder, KissenPlugin plugin, SystemInterface system,
-                       boolean isMySQL,
                        boolean hasEnabledBungeecord)
 {
     public boolean isProxy()
