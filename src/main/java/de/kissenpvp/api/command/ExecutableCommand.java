@@ -34,7 +34,9 @@ import java.util.function.Consumer;
 public interface ExecutableCommand
 {
 
-    CommandDescriptor getCommandDescription();
+    CommandDescription getCommandDescription();
+
+    void onCommand();
 
     /**
      * This method checks whether the sender is a player.
@@ -55,13 +57,17 @@ public interface ExecutableCommand
      * @param sentence The sentence you want to get.
      * @return The message from the sentence.
      */
-    String getMessage(Sentence sentence);
+    ChatComponent getMessage(Sentence sentence);
 
     /**
      * @param sentence The sentence you want to get.
      * @return The message from the sentence.
      */
-    String getRawMessage(Sentence sentence);
+    ChatComponent getRawMessage(Sentence sentence);
+
+    String getAlias();
+
+    String[] getArguments();
 
     /**
      * Sends a message to the player in the language the player's using.

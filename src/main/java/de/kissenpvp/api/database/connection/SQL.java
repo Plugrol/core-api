@@ -30,7 +30,7 @@ import java.sql.Statement;
  * @author Groldi
  * @since 1.0.0-SNAPSHOT
  */
-public interface SQLImplementation extends Implementation
+public interface SQL extends Implementation
 {
 
     /**

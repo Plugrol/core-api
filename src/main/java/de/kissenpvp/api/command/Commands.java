@@ -20,13 +20,19 @@
 package de.kissenpvp.api.command;
 
 import de.kissenpvp.api.base.Implementation;
+import de.kissenpvp.api.networking.client.entitiy.ConnectionClient;
 
 /**
  * @author Groldi
  * @since 1.0.0-SNAPSHOT
  */
-public interface CommandImplementation extends Implementation
+public interface Commands extends Implementation
 {
 
+    ExecutableCommand execute(ConnectionClient<?> sender, String command, String[] args);
+
+    CommandDescription getCommand(String command);
+
+    CommandDescription getCommand(Class<? extends PluginCommand> commandClazz);
 
 }

@@ -19,6 +19,7 @@
 
 package de.kissenpvp.api.message.language;
 
+
 /**
  * @author Groldi
  * @since 1.0.0-SNAPSHOT
@@ -50,19 +51,12 @@ public interface Sentence
     MessageType getType();
 
     /**
-     * This method replaces the variables in the message.
-     *
-     * @param message The message in the used language.
-     * @return The string with the replaced variables.
-     */
-    String replace(String message);
-
-    /**
      * Provides the message in its original "English" form.
      *
      * @return The standard message in English.
      */
     String getDefault();
+
 
     /**
      * The type of prefix to put in front.

@@ -17,12 +17,21 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package de.kissenpvp.api.command;
+package de.kissenpvp.api.base.loader;
+
+import de.kissenpvp.api.base.Implementation;
+
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author Groldi
  * @since 1.0.0-SNAPSHOT
  */
-public record CommandInfo(String command, String description, String[] usage, String[] alias, boolean consoleAllowed)
+public interface ClassScanner extends Implementation
 {
+
+    Set<ScanEntry> getPaths();
+
+    <T> List<T> getList(Class<T> clazz);
 }

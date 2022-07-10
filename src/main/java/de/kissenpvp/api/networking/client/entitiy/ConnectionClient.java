@@ -93,4 +93,9 @@ public abstract class ConnectionClient<T> extends Client
      */
     public abstract String getServer();
 
+    public String getLanguage()
+    {
+        return "en_GB";
+    }
+
 }

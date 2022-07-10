@@ -25,7 +25,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Annotates classes, which should be ignored, by the {@link ClassScannerImplementation}
+ * Annotates classes, which should be ignored, by the {@link ClassScanner}
  *
  * @author groldi
  * @since 0.0.1-SNAPSHOT

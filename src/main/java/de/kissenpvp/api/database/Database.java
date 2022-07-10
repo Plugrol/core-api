@@ -19,13 +19,13 @@
 
 package de.kissenpvp.api.database;
 
-import de.kissenpvp.api.database.connection.SQLImplementation;
+import de.kissenpvp.api.database.connection.SQL;
 
 /**
  * @author Groldi
  * @since 1.0.0-SNAPSHOT
  */
-public interface DatabaseImplementation extends SQLImplementation
+public interface Database extends SQL
 {
 
     /**

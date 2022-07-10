@@ -19,13 +19,15 @@
 
 package de.kissenpvp.api.event;
 
+import de.kissenpvp.api.base.Implementation;
+
 import java.util.List;
 
 /**
  * @author Groldi
  * @since 1.0.0-SNAPSHOT
  */
-public interface EventImplementation
+public interface Events extends Implementation
 {
     /**
      * Returns the events that were registered to the list of the {@link ClassLoader}

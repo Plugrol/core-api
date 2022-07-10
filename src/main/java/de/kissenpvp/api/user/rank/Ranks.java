@@ -17,7 +17,7 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package de.kissenpvp.api.ban;
+package de.kissenpvp.api.user.rank;
 
 import java.util.Set;
 
@@ -25,13 +25,14 @@ import java.util.Set;
  * @author Groldi
  * @since 1.0.0-SNAPSHOT
  */
-public interface BanImplementation
+public interface Ranks
 {
-    boolean createBanID(BanIDNode banIDNode) throws BanIDAlreadyUsedException;
+    boolean createRank(RankNode banIDNode) throws RankNameAlreadyUsedException;
 
-    boolean deleteBanID(int id);
+    boolean deleteRank(String rankName);
 
-    BanIDNode getBanID(int id);
+    RankIDNode getRank(String rankName);
 
-    Set<BanIDNode> getBanIDList();
+    Set<RankNode> getRankList();
+
 }

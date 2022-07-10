@@ -26,7 +26,7 @@ import de.kissenpvp.api.base.plugin.KissenPlugin;
  * @author Groldi
  * @since 1.0.0-SNAPSHOT
  */
-public interface ConfigurationImplementation extends Implementation
+public interface Configuration extends Implementation
 {
     default <T> T getSetting(Class<? extends Option<T>> clazz)
     {

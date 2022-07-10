@@ -27,7 +27,7 @@ import java.util.jar.JarFile;
  * @author Groldi
  * @since 1.0.0-SNAPSHOT
  */
-public interface ReflectionImplementation extends Implementation
+public interface Reflection extends Implementation
 {
 
     /**

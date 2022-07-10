@@ -27,7 +27,7 @@ import java.util.Set;
  * @author Groldi
  * @since 1.0.0-SNAPSHOT
  */
-public interface TaskImplementation extends Implementation
+public interface Tasks extends Implementation
 {
     Task registerTask(String id, Runnable runnable);
 

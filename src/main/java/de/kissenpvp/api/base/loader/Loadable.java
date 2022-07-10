@@ -19,6 +19,7 @@
 
 package de.kissenpvp.api.base.loader;
 
+import de.kissenpvp.api.base.plugin.KissenPlugin;
 import de.kissenpvp.api.reflection.ReflectionClass;
 
 import java.util.Comparator;
@@ -36,7 +37,7 @@ public interface Loadable
      * @param plugin The plugin on which the whole thing is registered.
      * @return Whether it's loadable or not.
      */
-    boolean isLoadable(ReflectionClass clazz, Object plugin);
+    boolean isLoadable(ReflectionClass clazz, KissenPlugin plugin);
 
     /**
      * Loads the content of the loadable.
@@ -44,7 +45,7 @@ public interface Loadable
      * @param clazz  The class associated with it.
      * @param plugin The plugin on which the whole thing is registered.
      */
-    void load(ReflectionClass clazz, Object plugin);
+    void load(ReflectionClass clazz, KissenPlugin plugin);
 
     /**
      * The object to be added to the list.
@@ -73,5 +74,5 @@ public interface Loadable
      * @param clazz  The class associated with it.
      * @param plugin The plugin on which the whole thing is registered.
      */
-    void enable(ReflectionClass clazz, Object plugin);
+    void enable(ReflectionClass clazz, KissenPlugin plugin);
 }

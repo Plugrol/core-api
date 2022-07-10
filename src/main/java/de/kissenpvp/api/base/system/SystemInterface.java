@@ -19,11 +19,9 @@
 
 package de.kissenpvp.api.base.system;
 
-import de.kissenpvp.api.command.CommandDescriptor;
-import de.kissenpvp.api.networking.client.entitiy.ConnectionClient;
+import de.kissenpvp.api.base.plugin.KissenPlugin;
+import de.kissenpvp.api.command.CommandDescription;
 import de.kissenpvp.api.networking.socket.SocketEntity;
-
-import java.util.List;
 
 /**
  * @author Groldi
@@ -38,7 +36,7 @@ public interface SystemInterface extends TaskSystem, EntitySystem, LogSystem
      *
      * @param commandDescriptor The command to be added.
      */
-    void registerCommand(CommandDescriptor commandDescriptor);
+    void registerCommand(CommandDescription commandDescriptor);
 
     /**
      * Returns whether the passed class is a listener.
@@ -55,7 +53,7 @@ public interface SystemInterface extends TaskSystem, EntitySystem, LogSystem
      * @param listener The listener to be added.
      * @param plugin   The plugin that registers the listener.
      */
-    void registerListener(Object listener, Object plugin);
+    void registerListener(Object listener, KissenPlugin plugin);
 
     /**
      * Returns the port on which the server is running.
@@ -70,7 +68,5 @@ public interface SystemInterface extends TaskSystem, EntitySystem, LogSystem
      * @return the connection client.
      */
     SocketEntity getSocketEntity();
-
-    void localCallbackModifier(String command, String usage, List<String> callBack, ConnectionClient<?> connectionClient);
 
 }

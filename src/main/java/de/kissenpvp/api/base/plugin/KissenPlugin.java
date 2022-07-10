@@ -20,6 +20,7 @@
 package de.kissenpvp.api.base.plugin;
 
 import de.kissenpvp.api.base.Implementation;
+import de.kissenpvp.api.base.Kissen;
 
 import java.io.File;
 
@@ -43,17 +44,6 @@ public interface KissenPlugin extends Implementation
     void onLoad();
 
     /**
-     * Called when the server goes off.
-     */
-    void onDisable();
-
-    /**
-     * Is called as soon as the plugin is loaded.
-     * This happens before all plugins are activated.
-     */
-    void onPreStart();
-
-    /**
      * @return file of the plugin's jar
      */
     File getFile();
@@ -61,17 +51,23 @@ public interface KissenPlugin extends Implementation
     /**
      * @return the folder containing plugin sources.
      */
-    File getDataFolder();
+    File getFolder();
+
+    /**
+     * Is called as soon as the plugin is loaded.
+     * This happens before all plugins are activated.
+     */
+    boolean onPreStart();
 
     /**
      * Called when the plugin is activated.
      */
-    void onStart();
+    boolean onStart();
 
     /**
      * Is called as soon as all plugins have been activated.
      */
-    void onPostStart();
+    boolean onPostStart();
 
     /**
      * Called when the plugin is about to shut down.
@@ -82,6 +78,11 @@ public interface KissenPlugin extends Implementation
      * Called when this plugin is disabled
      */
     void stop();
+
+    /**
+     * Called when the server goes off.
+     */
+    void onDisable();
 
     /**
      * indicates whether the system has started.
@@ -95,5 +96,7 @@ public interface KissenPlugin extends Implementation
      *
      * @return the object.
      */
-    Object getInstance();
+    KissenPlugin getInstance();
+
+    Kissen getCore();
 }

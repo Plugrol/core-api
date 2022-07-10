@@ -31,7 +31,7 @@ import java.util.UUID;
  * @author Groldi
  * @since 1.0.0-SNAPSHOT
  */
-public interface UserImplementation extends Implementation
+public interface Users extends Implementation
 {
 
     /**

@@ -26,7 +26,7 @@ import de.kissenpvp.api.message.language.Sentence;
  * @author Groldi
  * @since 1.0.0-SNAPSHOT
  */
-public interface MessageImplementation extends Implementation
+public interface Messages extends Implementation
 {
     /**
      * A message in a specific language. This message will be adjusted to the plugins default, which includes adding a prefix and a color.

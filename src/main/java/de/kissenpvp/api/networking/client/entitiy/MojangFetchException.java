@@ -25,4 +25,21 @@ package de.kissenpvp.api.networking.client.entitiy;
  */
 public class MojangFetchException extends NullPointerException
 {
+    private final String PLAYER;
+
+    public MojangFetchException(String player)
+    {
+        this.PLAYER = player;
+    }
+
+    public MojangFetchException(String message, String player)
+    {
+        super(message);
+        this.PLAYER = player;
+    }
+
+    public String getPlayer()
+    {
+        return PLAYER;
+    }
 }

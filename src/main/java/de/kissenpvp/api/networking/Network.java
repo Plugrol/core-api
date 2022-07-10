@@ -17,14 +17,20 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package de.kissenpvp.api.command;
+package de.kissenpvp.api.networking;
 
-import de.kissenpvp.api.base.plugin.KissenPlugin;
+import de.kissenpvp.api.base.Implementation;
+import de.kissenpvp.api.networking.socket.DataPackage;
 
 /**
  * @author Groldi
  * @since 1.0.0-SNAPSHOT
  */
-public record CommandDescriptor(CommandInfo commandInfo, KissenPlugin plugin, PluginCommand pluginCommand)
+public interface Network extends Implementation
 {
+
+    DataPackage createPackage(String id, Object... data);
+
+    void sendDataPackage(DataPackage dataPackage);
+
 }
