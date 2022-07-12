@@ -19,6 +19,8 @@
 
 package de.kissenpvp.api.config;
 
+import de.kissenpvp.api.base.Kissen;
+import de.kissenpvp.api.base.documentation.AnomalyUse;
 import de.kissenpvp.api.database.file.File;
 
 /**
@@ -44,7 +46,7 @@ public abstract class OptionDefault<T> implements Option<T>
         this.value = value;
     }
 
-    @Override public void setUnsafe(Object value) throws ClassCastException
+    @Override @AnomalyUse(value = "This is very dangerous since it only works, when invoking the exact same type as the option has to be.") public void setUnsafe(Object value) throws ClassCastException
     {
         setValue((T) value);
     }
@@ -53,5 +55,28 @@ public abstract class OptionDefault<T> implements Option<T>
     {
         setValue(value);
         file.write(getCode(), value, getDescription());
+    }
+
+    private T cast(Object object)
+    {
+        final T DEFAULT_TYPE_DESCRIPTION = this.getDefault();
+        try
+        {
+            if (DEFAULT_TYPE_DESCRIPTION.getClass().getSimpleName().equals("String"))
+            {
+                //String does not have a method String.valueOf(String); ._.
+                return (T) object;
+            }
+            else
+            {
+                //Cannot be another thing, it's just an instance of T
+                return (T) DEFAULT_TYPE_DESCRIPTION.getClass().getMethod("valueOf", String.class).invoke(null, object.toString());
+            }
+        }
+        catch (Exception exception)
+        {
+            Kissen.getInstance().getInternals().system().log("An error occurred while trying to convert unknown value to " + DEFAULT_TYPE_DESCRIPTION.getClass().getSimpleName(), exception);
+        }
+        return null;
     }
 }
