@@ -75,7 +75,7 @@ public abstract class OptionDefault<T> implements Option<T>
         }
         catch (Exception exception)
         {
-            Kissen.getInstance().getInternals().system().log("An error occurred while trying to convert unknown value to " + DEFAULT_TYPE_DESCRIPTION.getClass().getSimpleName(), exception);
+            Kissen.getInstance().getInternals().system().error("An error occurred while trying to convert unknown value to " + DEFAULT_TYPE_DESCRIPTION.getClass().getSimpleName(), exception);
         }
         return null;
     }

@@ -40,4 +40,8 @@ public interface Implementation
         return true;
     }
 
+    default void stop()
+    {
+    }
+
 }

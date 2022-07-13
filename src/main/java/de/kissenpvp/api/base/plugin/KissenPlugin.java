@@ -82,11 +82,6 @@ public interface KissenPlugin extends Implementation
     void onStop();
 
     /**
-     * Called when this plugin is disabled
-     */
-    void stop();
-
-    /**
      * Called when the server goes off.
      */
     void onDisable();

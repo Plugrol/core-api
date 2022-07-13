@@ -39,7 +39,6 @@ public abstract class Kissen
 
     public abstract InfoNode getInternals();
 
-    public abstract void start(InfoNode infoNode) throws KissenStartException;
 
     public abstract <T extends Implementation> T getImplementation(Class<T> implementation);
 }

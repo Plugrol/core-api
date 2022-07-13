@@ -32,35 +32,13 @@ import java.sql.Statement;
  */
 public interface SQL extends Implementation
 {
-    /**
-     * Establishes a connection to the responsible driver.
-     *
-     * @throws SQLException is thrown when there is some kind of error while connection, like wrong login data or the server is offline.
-     */
-    void connect() throws SQLException;
-
-    /**
-     * Disconnects the connection between the java plugin and the sql source.
-     */
-    void disconnect();
 
     /**
      * @return Whether the sql driver is set up.
      */
     boolean isConnected();
 
-    /**
-     * This is a secure way, to get send a SQL command using a {@link PreparedStatement} which provides some extra security.
-     * Unlike {@link Statement} this statement has implemented a separation of the query and the inputs.
-     *
-     * @param sql the query to send to the sql driver.
-     * @return the created statement which can be executed afterwards.
-     * @throws SQLException is thrown when the driver is not set or there was an error contacting the server.
-     */
-    default PreparedStatement getPreparedStatement(String sql) throws SQLException
-    {
-        return getPreparedStatement(sql, MySQLType.PUBLIC);
-    }
+
 
     /**
      * This method can be pretty critical, since mysql is a real thing.
@@ -87,6 +65,19 @@ public interface SQL extends Implementation
      * @throws SQLException is thrown when the driver is not set or there was an error contacting the server.
      */
     PreparedStatement getPreparedStatement(String sql, MySQLType mySQLType) throws SQLException;
+
+    /**
+     * This is a secure way, to get send a SQL command using a {@link PreparedStatement} which provides some extra security.
+     * Unlike {@link Statement} this statement has implemented a separation of the query and the inputs.
+     *
+     * @param sql the query to send to the sql driver.
+     * @return the created statement which can be executed afterwards.
+     * @throws SQLException is thrown when the driver is not set or there was an error contacting the server.
+     */
+    default PreparedStatement getPreparedStatement(String sql) throws SQLException
+    {
+        return getPreparedStatement(sql, MySQLType.PUBLIC);
+    }
 
     /**
      * This method can be pretty critical, since mysql is a real thing.
