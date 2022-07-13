@@ -34,7 +34,11 @@ public interface Task
 
     boolean isAsync();
 
+    int getTickRate();
+
     int getListener();
+
+    void setListener(int listener);
 
     boolean isRunning();
 

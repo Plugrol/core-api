@@ -29,20 +29,19 @@ import java.util.Set;
  */
 public interface Tasks extends Implementation
 {
-    Task registerTask(String id, Runnable runnable);
+    Task registerTask(String id, int tickRate, Runnable runnable);
 
-    Task registerTask(String id, String group, Runnable runnable);
+    Task registerTask(String id, String group, int tickRate, Runnable runnable);
 
-    Task registerTask(String id, String group, boolean isRunning, Runnable runnable);
+    Task registerTask(String id, String group, int tickRate, boolean isRunning, Runnable runnable);
 
+    Task registerAsyncTask(String id, int tickRate, Runnable runnable);
 
-    Task registerAsyncTask(String id, Runnable runnable);
+    Task registerAsyncTask(String id, String group, int tickRate, Runnable runnable);
 
-    Task registerAsyncTask(String id, String group, Runnable runnable);
+    Task registerAsyncTask(String id, String group, int tickRate, boolean isRunning, Runnable runnable);
 
-    Task registerAsyncTask(String id, String group, boolean isRunning, Runnable runnable);
-
-    Task registerTask(String id, String group, boolean isRunning, boolean async, Runnable runnable);
+    Task registerTask(String id, String group, int tickRate, boolean isRunning, boolean async, Runnable runnable);
 
     boolean endTask(String id);
 
