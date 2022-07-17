@@ -25,23 +25,41 @@ package de.kissenpvp.api.base;
  */
 public interface Implementation
 {
+    /**
+     * The pre start phase is executed when staring the server, unlike {@link #start()} and {@link #postStart()} there is a high chance that things are not initialised yet.
+     * It is used to load up things which should be set when running {@link #start()}
+     *
+     * @return whether it was successful or something failed.
+     */
     default boolean preStart()
     {
         return true;
     }
 
+    /**
+     * This is the main start phase and is executed when the server is about to start. It is there to load up implementations and kissen plugins.
+     *
+     * @return whether it was successful or something failed.
+     */
     default boolean start()
     {
         return true;
     }
 
+    /**
+     * The post start is important when everything needs to be set when executing this method. It'll run after {@link #start()}
+     *
+     * @return whether it was successful or something failed.
+     */
     default boolean postStart()
     {
         return true;
     }
 
+    /**
+     * This method is called when the server is shutting down.
+     */
     default void stop()
     {
     }
-
 }
