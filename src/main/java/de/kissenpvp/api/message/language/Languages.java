@@ -50,18 +50,18 @@ public interface Languages extends Implementation
     ChatComponent getRawMessage(String language, Sentence sentence);
 
     /**
+     * Returns all sentences registered by the given plugin.
+     *
+     * @param kissenPlugin the plugin to attach this {@link Sentence}
+     */
+    List<Sentence> getSentences(KissenPlugin kissenPlugin);
+
+    /**
      * Registers a new sentence in the system.
      *
      * @param kissenPlugin the plugin to attach this {@link Sentence}
      * @param sentence     the sentence to add.
      */
     void registerSentence(KissenPlugin kissenPlugin, Sentence sentence);
-
-    /**
-     * Returns all sentences registered by the given plugin.
-     *
-     * @param kissenPlugin the plugin to attach this {@link Sentence}
-     */
-    List<Sentence> getSentences(KissenPlugin kissenPlugin);
 
 }

@@ -16,13 +16,14 @@
 
 package de.kissenpvp.api.database;
 
-import de.kissenpvp.api.database.connection.SQL;
+import com.google.gson.JsonElement;
+import de.kissenpvp.api.base.Implementation;
 
 /**
  * @author Groldi
  * @since 1.0.0-SNAPSHOT
  */
-public interface Database extends SQL
+public interface Database extends Implementation
 {
 
     /**
@@ -32,6 +33,14 @@ public interface Database extends SQL
      * @return the json as string.
      */
     String toJson(Record record);
+
+    /**
+     * Converts a {@link Record} to a {@link JsonElement} which is provided by the gson api.
+     *
+     * @param record the record to convert.
+     * @return the converted record as {@link JsonElement}
+     */
+    JsonElement toJsonElement(Record record);
 
     /**
      * Turns a {@link String} back to a {@link Record}.

@@ -16,19 +16,33 @@
 
 package de.kissenpvp.api.message;
 
-import de.kissenpvp.api.message.language.Languages;
+import de.kissenpvp.api.base.Implementation;
 
 /**
  * @author Groldi
  * @since 1.0.0-SNAPSHOT
  */
-public interface Messages extends Languages
+public interface Messages extends Implementation
 {
+    /**
+     * Gets the last chat color used in a string. This depends on the color codes such as §c
+     * When there would be something like "§cHello" it would return §c.
+     *
+     * @param chatComponent the component containing the string where to check the color codes.
+     * @return the last color code found.
+     */
     default String getLastColorCode(ChatComponent chatComponent)
     {
         return getLastColorCode(chatComponent.getText());
     }
 
+    /**
+     * Gets the last chat color used in a string. This depends on the color codes such as §c
+     * When there would be something like "§cHello" it would return §c.
+     *
+     * @param message the string where to check the color codes.
+     * @return the last color code found.
+     */
     String getLastColorCode(String message);
 
     String toTime(long milliseconds);
